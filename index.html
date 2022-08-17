@@ -18,16 +18,17 @@
     ></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla weatherapp</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1>New York</h1>
+            <h1 id="city"></h1>
             <ul>
-              <li>Friday 5:00</li>
-              <li>Clear</li>
+              <li>Last updated <span id="date"></span></li>
+              <li id="conditions"></li>
             </ul>
           </div>
           <div class="row">
@@ -39,16 +40,15 @@
                   id="icon"
                 />
                 <div>
-                  <strong id="temperature">12</strong
+                  <strong id="temperature"></strong
                   ><span class="units">°C |<a href="#">°F</a></span>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 65%</li>
-                <li>Wind: 4 m/s</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
