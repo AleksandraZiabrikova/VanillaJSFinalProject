@@ -42,10 +42,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "1ddfe6760d70aea0fb7088fd8803337f";
-let endPoint = "https://api.openweathermap.org/data/2.5/weather?";
-let unit = "metric";
-let city = "Berlin";
-let apiUrl = `${endPoint}q=${city}&units=${unit}&appId=${apiKey}`;
+function search(city) {
+  let apiKey = "1ddfe6760d70aea0fb7088fd8803337f";
+  let endPoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let unit = "metric";
+  let apiUrl = `${endPoint}q=${city}&units=${unit}&appId=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
