@@ -69,3 +69,18 @@ li:first-letter {
 a {
   text-decoration: none;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: #4d4e51;
+}
+
+.weather-forecast-temperature-minimum {
+  color: #71757a;
+  opacity: 0.8;
+}
