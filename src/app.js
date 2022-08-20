@@ -67,7 +67,7 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("New York");
+search("Copenhagen");
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
